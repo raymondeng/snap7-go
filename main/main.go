@@ -16,7 +16,8 @@ import (
 // }
 
 func main() {
-	host := "116.85.47.167"
+	host := "192.168.2.3"
+	fmt.Println("111")
 	client, err := snap7.ConnentTo2(host, 0x0200, 0x0200, 0)
 
 	fmt.Println(client)
