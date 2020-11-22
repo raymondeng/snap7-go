@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/raymonddeng/snap7-go"
+	"github.com/raymondeng/snap7-go"
 )
 
 // func main() {
