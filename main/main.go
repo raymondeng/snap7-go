@@ -17,9 +17,12 @@ import (
 
 func main() {
 	host := "192.168.2.3"
-	fmt.Println("111")
-	client, err := snap7.ConnentTo2(host, 0x0200, 0x0200, 0)
+	client, err := snap7.ConnentTo2(host, 0x0101, 0x0101, 0)
 
 	fmt.Println(client)
 	fmt.Println(err)
+
+	result, _ := client.GetPlcDateTime()
+	fmt.Println(result)
+
 }

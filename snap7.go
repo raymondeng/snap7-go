@@ -1,13 +1,12 @@
 package snap7
 
 import (
-	"fmt"
 	"unsafe"
 )
 
 /*
 #cgo CFLAGS: -I./
-#cgo LDFLAGS: -L./ -lsnap7
+#cgo LDFLAGS: -L./ -lsnap7 -lws2_32 -lwinmm -lstdc++
 #include "snap7.h"
 */
 import "C"
@@ -50,7 +49,6 @@ func ConnentTo(address string, rack int, slot int, ConnectionType uint16) (Snap7
 }
 
 func ConnentTo2(address string, LocalTSAP uint16, RemoteTSAP uint16, ConnectionType uint16) (Snap7Client, error) {
-	fmt.Println("init")
 	var client C.S7Object = C.Cli_Create()
 
 	if ConnectionType > 0 {
