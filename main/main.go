@@ -17,12 +17,16 @@ import (
 
 func main() {
 	host := "192.168.2.3"
-	client, err := snap7.ConnentTo2(host, 0x0101, 0x0101, 0)
+	// client, err := snap7.ConnentTo2(host, 0x0101, 0x0101, 1)
+	client, err := snap7.ConnentTo(host, 1, 1, 1)
 
 	fmt.Println(client)
 	fmt.Println(err)
 
-	result, _ := client.GetPlcDateTime()
-	fmt.Println(result)
+	resultPlcTime, _ := client.GetPlcDateTime()
+	fmt.Println(resultPlcTime)
+
+	resultDr3000, _ := client.DBRead(3000, 0, 4)
+	fmt.Println(resultDr3000)
 
 }
